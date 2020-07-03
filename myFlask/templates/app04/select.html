@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>전체 레코드 조회 결과</title>
+</head>
+<body>
+    <div align="center">
+        <h2>전체 레코드 조회 결과</h2>
+        <table border="1" width="500">
+            <tr> <!-- 제목 행-->
+                <th>상품 코드</th>
+                <th>상품명</th>
+                <th>수량</th>
+                <th>단가</th>
+            </tr>
+            {% if data : %}
+                {% for row in data %}
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td colspan="4">
+                    <h3> 레코드 없음</h3>
+                </td>
+            </tr>
+            {% endif %}
+
+        </table>
+        <a href="/">index.html</a>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+
+</head>
+<body>
+    <div align="center">
+        <h2>종목명을 입력하세요.</h2>
+        <form method="post" action="/search">   <!--서버에 전송할 건 무조건 폼 테그로-->
+            <table>
+                <tr>
+                    <th>종목명 입력</th>
+                    <th><input type="text" name="dong" size="30"></th>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="찾기"/>
+                        <input type="reset" value="취소"/>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
