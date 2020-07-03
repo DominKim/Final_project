@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index file</title>
+
+    <style>
+        img{
+        margin: 50px 0 0 40px;  /* 주석문 형태! 바깥쪽 여백 */
+        border-radius : 500px;  /* 이미지 라운딩 처리 */
+        box-shadow : 10px -10px 100px brown;
+        }
+    </style>
+
+</head>
+<body>
+    <div align = "center">
+    
+        <h1>항목코드 검색창</h1>
+        
+        <img src="{{ url_for('static', filename='로고.png') }}" width="400" height="300"/>
+        
+        <br/>
+        <hr/>
+        <br/>
+        
+        <form method="post" action="/search">
+            <table>
+                <tr>
+                    <th>항목코드 입력</th>
+                    <th> <input type="text" name = "name" size="30"> </th>
+                </tr>
+                    <th colspan="2">
+                        <input type="submit" value="찾기"/>
+                        <input type="reset" value="취소"/>
+                    </th>
+                </tr>
+            </table>
+        </form>
+        
+    </div>
+</body>
+</html>
