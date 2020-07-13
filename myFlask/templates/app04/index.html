@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index page</title>
+</head>
+<body>
+    <div align="center">
+        <h2>메뉴를 선택하세요.</h2>
+        <form method="get" action="/select">
+            <table border="1" width="400">
+                <tr>
+                    <td>
+                        <input type="radio" name="menu" value="1" checked>1. 레코드 조회<br>
+                        <input type="radio" name="menu" value="2">2. 레코드 추가<br>
+                        <input type="radio" name="menu" value="3">3. 레코드 수정<br>
+                        <input type="radio" name="menu" value="4">4. 레코드 삭제<br>
+                    </td>
+                    <td>
+                        <input type="submit" value="선택"/>
+                        <input type="reset" value="취소"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

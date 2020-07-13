@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>항목명 검색 결과</title>
+</head>
+<body>
+    <!-- name : 검색한 항목명-->
+    <div align="center">
+        <h2>항목명 검색 결과</h2>
+        
+        <table border="1" width="700">
+            <tr>
+                <th> 검색한 항목 이름 </th>
+                <th> {{name}} </th>
+            </tr>
+            <tr>
+                <th>전체 검색 항목</th>
+                <th>
+                    <ul>
+                        {% if data : %}
+                            {%for row in data%}
+                            <li> {{row}} </li>
+                            {% endfor %}
+                        {% else %}
+                            <li> 검색 항목 없음 </li>
+                        {% endif %}
+                    </ul>
+                    <br>
+                    <p> 전체 레코드 수 : {{size}} </p>
+                </th>
+            </tr>
+        </table>
+        
+        <hr/>
+        <a href="/">[index.html]</a>
+    </div>
+
+</body>
+</html>
