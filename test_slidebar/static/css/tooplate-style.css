@@ -150,7 +150,7 @@ p:last-child { margin-bottom: 0; }
 .tm-main-nav { font-size: 1.6rem; }
 .tm-main-nav li { list-style: none; }
 .tm-main-nav a {
-    background-image: url(./static/img/nav-item.png);
+    background-image: url(../img/nav-item.png);
     background-repeat: no-repeat;
     background-position: left bottom;
     color: white;
@@ -168,7 +168,7 @@ p:last-child { margin-bottom: 0; }
 .tm-main-nav a:hover,
 .tm-main-nav a:focus,
 .tm-main-nav a.active {
-    background-image: url(./static/img/nav-item-highlight.png);
+    background-image: url(../img/nav-item-highlight.png);
     color: #33ccff;
     text-decoration: none;    
 }

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> test5 </title>
+    <title> test2 </title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
 	<link rel="stylesheet" href="./static/css/fontawesome-all.min.css">
 	<link rel="stylesheet" href="./static/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="./static/css/magnific-popup.css"/>
-	<link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
-	<link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+	<link rel="stylesheet" href="./static/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="./static/slick/slick.css" type="text/css"/>
+	<link rel="stylesheet" href="./static/slick/slick-theme.css" type="text/css"/>
 	<link rel="stylesheet" href="./static/css/tooplate-style.css">
 
 	<script>
@@ -47,19 +47,19 @@
 							<li>
 								<a href="#intro" id="tmNavLink1" class="scrolly active" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1">
 									<i class="fas fa-home tm-nav-fa-icon"></i>
-									<span>Introduction</span>
+									<span> 검색결과 </span>
 								</a>
 							</li>
 							<li>
 								<a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2" data-page-type="carousel">
 									<i class="fas fa-map tm-nav-fa-icon"></i>
-									<span>Our Products</span>
+									<span> 시각화 </span>
 								</a>
 							</li>
 							<li>
 								<a href="#company" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3">
 									<i class="fas fa-users tm-nav-fa-icon"></i>
-									<span>Our Company</span>
+									<span> 사이트 소개 </span>
 								</a>
 							</li>
 							<li>
@@ -78,42 +78,33 @@
 					<!-- section 1 -->
 					<section id="tm-section-1" class="tm-section">
 						<div class="ml-auto">
-							<div class="container">
-								<div class="row">
-									<div class="col-md-10 col-md-offset-1">
 
-										<div class="banner-caption">
-											<!-- 없애자
-											<div class="line-dec"></div> -->
+							<div align="center">
+                                <br><br>
+                                <h2> 검색 예금 상품 </h2>
+                                <table border="1" width = "800" align="center" >
+                                    <tr>
+                                        <th> 은행코드 </th> <th> 은행이름 </th> <th> 은행가입여부 </th>
+                                        <th> 예금상품코드 </th> <th> 예금상품이름 </th> <th> 가입기간 </th> <th> 이율 </th>
+                                    </tr>
+                                    {% if dataset : %}
+                                        {% for row in dataset %}
+                                        <tr>
+                                            <td> {{row[0]}}</td> <td> {{row[1]}}</td>
+                                            <td> {{row[2]}}</td> <td> {{row[3]}}</td>
+                                            <td> {{row[4]}}</td> <td> {{row[5]}}</td>
+                                            <td> {{row[6]}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    {% endif%}
+                                </table>
+                                    <p> 전체 레코드 수 : {{size}} 개</p>
+                                <br>
+                                <a href="/"> 이전 </a>
+                            </div>
 
-												<div align="center">
-													<br><br>
-													<h2> 검색 예금 상품 </h2>
-													<table border="1" width = "800" align="center" >
-														<tr>
-															<th> 은행코드 </th> <th> 은행이름 </th> <th> 은행가입여부 </th>
-															<th> 예금상품코드 </th> <th> 예금상품이름 </th> <th> 가입기간 </th> <th> 이율 </th>
-														</tr>
-														{% if dataset : %}
-															{% for row in dataset %}
-															<tr>
-																<td> {{row[0]}}</td> <td> {{row[1]}}</td>
-																<td> {{row[2]}}</td> <td> {{row[3]}}</td>
-																<td> {{row[4]}}</td> <td> {{row[5]}}</td>
-																<td> {{row[6]}}</td>
-															</tr>
-															{% endfor %}
-														{% endif%}
-													</table>
-														<p> 전체 레코드 수 : {{size}} 개</p>
-													<br>
-													<a href="/"> 이전 </a>
-												</div>
-
-										</div>
-									</div>
-								</div>
-
+							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
+						</div>
 					</section>
 
 					<!-- section 2 -->
@@ -122,12 +113,12 @@
 							<header class="mb-4"><h2 class="tm-text-shadow">Our Products</h2></header>
 							<div class="tm-img-container">
 								<div class="tm-img-slider">
-									<a href="./static/img/gallery-img-01.jpg" class="tm-slider-img"><img src="./static/img/gallery-img-01-tn.jpg" alt="Image" class="img-fluid"></a>
-									<a href="./static/img/gallery-img-02.jpg" class="tm-slider-img"><img src="./static/img/gallery-img-02-tn.jpg" alt="Image" class="img-fluid"></a>
-									<a href="./static/img/gallery-img-03.jpg" class="tm-slider-img"><img src="./static/img/gallery-img-03-tn.jpg" alt="Image" class="img-fluid"></a>
-									<a href="./static/img/gallery-img-04.jpg" class="tm-slider-img"><img src="./static/img/gallery-img-04-tn.jpg" alt="Image" class="img-fluid"></a>
-									<a href="./static/img/gallery-img-05.jpg" class="tm-slider-img"><img src="./static/img/gallery-img-05-tn.jpg" alt="Image" class="img-fluid"></a>
-									<a href="./static/img/gallery-img-06.jpg" class="tm-slider-img"><img src="./static/img/gallery-img-06-tn.jpg" alt="Image" class="img-fluid"></a>
+									<a href="img/gallery-img-01.jpg" class="tm-slider-img"><img src="img/gallery-img-01-tn.jpg" alt="Image" class="img-fluid"></a>
+									<a href="img/gallery-img-02.jpg" class="tm-slider-img"><img src="img/gallery-img-02-tn.jpg" alt="Image" class="img-fluid"></a>
+									<a href="img/gallery-img-03.jpg" class="tm-slider-img"><img src="img/gallery-img-03-tn.jpg" alt="Image" class="img-fluid"></a>
+									<a href="img/gallery-img-04.jpg" class="tm-slider-img"><img src="img/gallery-img-04-tn.jpg" alt="Image" class="img-fluid"></a>
+									<a href="img/gallery-img-05.jpg" class="tm-slider-img"><img src="img/gallery-img-05-tn.jpg" alt="Image" class="img-fluid"></a>
+									<a href="img/gallery-img-06.jpg" class="tm-slider-img"><img src="img/gallery-img-06-tn.jpg" alt="Image" class="img-fluid"></a>
 								</div>
 							</div>
 						</div>
@@ -219,7 +210,7 @@
 					</section>
 				</div>	<!-- .tm-content -->
 				<footer class="footer-link">
-					<p class="tm-copyright-text">Copyright &copy; 2018 Constructive Co. Ltd.
+					<p class="tm-copyright-text"> 남승현과 아이들
 
                     - Design: Tooplate</p>
 				</footer>
@@ -321,7 +312,7 @@
 
 	    	// Change background image
 	    	var bgImg = currentNavItem.data("bgImg");
-	    	$.backstretch("img/" + bgImg);
+	    	$.backstretch("/static/img/" + bgImg);
   		}
 
   		// Setup Nav Toggle Button
@@ -387,7 +378,7 @@
 		     	// Set up background first page
 		     	var bgImg = $("#tmNavLink1").data("bgImg");
 
-		     	$.backstretch("img/" + bgImg, {fade: 500});
+		     	$.backstretch("/static/img/" + bgImg, {fade: 500});
 
 		     	// Setup Carousel, Nav, and Nav Toggle
 			    setupCarousel();
