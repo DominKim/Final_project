@@ -47,7 +47,7 @@ for col in cols:
 '''
 
 df.drop(abst, axis=1, inplace=True)
-df.info()  # columns : 179 > 174
+df.info()  # columns : 179 > 175
 
 # 결측치 채우기
 df.isnull().sum()
