@@ -3,6 +3,7 @@ from scipy import stats
 import pandas as pd
 
 data = pd.read_excel("C:\\Users\\user\\Documents\\통합 문서1.xlsx", index=True)
+# 데이터는 업종코드만 추출하여 사용하였음, 전체 산업코드와 각 집단 산업코드를 분리 추출
 data.info()
 
 dis_all = data['전체'].value_counts()
@@ -34,6 +35,7 @@ for i in dis_all.index:
     else:
         a.append(0)
 
+        
 dis_all1 = list(dis_all)
 
 chis0 = stats.chisquare(dis_all1, a)
