@@ -61,9 +61,19 @@ def result():
         print(df2)
 
         data3 = get_recommend_list2(df, cname)
-        #data4 = data3[['회사명'], ['업종명'], ['결산기준일'], ['자산총계'], ['자본총계'], ['부채총계']]
-        data4 = data3.iloc[:, 0:6]
+        #data4 = data3[['회사명'], ['업종'], ['결산기준일'], ['자산총계'], ['자본총계'], ['부채총계']]
+        data4 = data3.iloc[:, [0,1, 4, 6, 94, 170, 172]]
+
+        def pre(x):
+            x = x.replace("[", "")
+            a = x.replace("]", "")
+            return a
+
+        data4["종목코드"] = data4["종목코드"].agg(pre)
+
         data5 = np.array(data4)
+
+
         print('data5 =', data5)
         print('a = ', type(data5))
 
@@ -82,3 +92,4 @@ def result():
 # 프로그램 시작점
 if __name__ == "__main__" :
     app.run() # application 실행
+
