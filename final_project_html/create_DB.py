@@ -7,20 +7,20 @@ config = {
     'host': '127.0.0.1',
     'user': 'scott',
     'password': 'tiger',
-    'database': 'work',
+    'database': 'final',
     'port': 3306,
     'charset': 'utf8',
     'use_unicode': True}
 
 # 데이터 가져오기. final
 df = pd.read_csv(
-    "C:/ITWILL/project_df1.csv",
+    "C:\\ITWILL\\Work\\Final_Project\\clustering\\data\\!_all_preprocessing_finish_without_entity.csv",
     thousands=',', encoding='euc-kr')
 df.info()
 df.columns
 
 df_cluster = pd.read_csv(
-    "C:/ITWILL/project_df2.csv",
+    "C:\\ITWILL\\Work\\Final_Project\\clustering\\work\\mid_dropna_data\\data\\KmedianCluster_6_CapitalPerAsset_LiabilityPerAsset.csv",
     thousands=',', encoding='euc-kr')
 df_cluster.info()
 
@@ -64,7 +64,7 @@ try:
     pymysql.install_as_MySQLdb()
     import MySQLdb
 
-    engine = create_engine("mysql+mysqldb://scott:" + "tiger" + "@127.0.0.1:3306/work?charset=utf8", encoding='utf-8')
+    engine = create_engine("mysql+mysqldb://scott:" + "tiger" + "@127.0.0.1:3306/final?charset=utf8", encoding='utf-8')
     conn = engine.connect()
 
     df_fillna.to_sql(name='fs_simple', con=engine, if_exists='fail')

@@ -1,7 +1,9 @@
 # Bank Info
 from flask import Flask, render_template, request
+#from pytest import collect
 from sklearn.metrics.pairwise import euclidean_distances, manhattan_distances, cosine_similarity
 import pandas as pd
+import numpy as np
 # db 연결 객체 생성 함수
 def db_conn():
     import pymysql
@@ -11,34 +13,31 @@ def db_conn():
     cursor = conn.cursor()
     return conn, cursor
 
-conn,cursor = db_conn()
-sql = f"select *from fs_simple"
-cursor.execute(sql)
-row = cursor.fetchall()
-row[0]
-row2 = pd.DataFrame(row, header=True)
-row2.columns
 
-def get_recommend_list2(dff, name, top=10):
-    lst_idx = []
+def get_recommend_list2(dff, name):
     company = dff["회사명"].unique()
+    lst_idx = []
 
     for name in company:
-        day = list(dff[dff.iloc[2] == name]["결산기준일"].sort_values())[-1]
+        day = list(dff[dff["회사명"] == name]["결산기준일"].sort_values())[-1]
         company_index = list(dff[(dff["회사명"] == name) & (dff["결산기준일"] == day)].index)[0]
         lst_idx.append(company_index)
 
-    cluster_num = dff[dff["회사명"] == name]["cluster_23_last"].values[0]
-    new_df = dff[dff["cluster_23_last"] == cluster_num]
+    recom_df = dff.iloc[lst_idx, :]
+    recom_df.reset_index(drop=True, inplace=True)
+
+    cluster_num = recom_df[recom_df["회사명"] == name]["cluster"].values[0]
+    new_df = recom_df[recom_df["cluster"] == cluster_num]
     new_df.reset_index(drop=True, inplace=True)
     cosine = cosine_similarity(new_df.iloc[:, 9:], new_df.iloc[:, 9:]).argsort()[:, ::-1]
     company_index = new_df[new_df["회사명"] == name].index.values
 
-    sim_index = cosine[company_index, :30].reshape(-1)
+    sim_index = cosine[company_index, :6].reshape(-1)
     sim_index = sim_index[sim_index != company_index]
 
     result = new_df.iloc[sim_index, :].sort_values("자본총계", ascending=False)
     return result
+
 
 
 app = Flask(__name__) # object -> app object
@@ -51,21 +50,35 @@ def index():
 @app.route('/result', methods = ['GET', 'POST'])
 def result():
     if request.method == 'POST':
-        name = request.form['name']
+        cname = request.form['name']
+        print("cname = ", cname) # cname =  아이톡시
+
         conn,cursor = db_conn()
-        sql = f"select *from fs_simple"
+        print("2")
+        df = pd.read_sql("select * from fs_simple", conn)
+        print(df)
+        df2 = df.drop('index', axis=1, inplace=True)
+        print(df2)
+
+        data3 = get_recommend_list2(df, cname)
+        #data4 = data3[['회사명'], ['업종명'], ['결산기준일'], ['자산총계'], ['자본총계'], ['부채총계']]
+        data4 = data3.iloc[:, 0:6]
+        data5 = np.array(data4)
+        print('data5 =', data5)
+        print('a = ', type(data5))
+
+        size = len(data5)
+        print('size =', size)
+        '''
+        conn, cursor = db_conn()
+        sql = f"select 회사명, 업종명, 결산기준일, 자산총계, 자본총계, 부채총계 from fs_simple where 회사명 = '{cname}'"
         cursor.execute(sql)
-        row = cursor.fetchall()
-        row2 = pd.DataFrame(row)
-        data3 = get_recommend_list2(row2, name, top=10)
-        data4 = data3.iloc[:, 0:5]
-
-
+        data4 = cursor.fetchall()
         size = len(data4)
-        return render_template("/page2.html", dataset = data4, size=size)
+        '''
+        return render_template("/page2.html", dataset=data5, size=size, title=cname)
 
 
 # 프로그램 시작점
 if __name__ == "__main__" :
-    app.run(host = '172.20.10.8', port=16) # application 실행
-
+    app.run() # application 실행
