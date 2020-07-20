@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> result </title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">  <!-- Google web font "Open Sans" -->
+	<link rel="stylesheet" href="./static/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="./static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./static/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="./static/slick/slick.css" type="text/css"/>
+	<link rel="stylesheet" href="./static/slick/slick-theme.css" type="text/css"/>
+	<link rel="stylesheet" href="./static/css/tooplate-style.css">
+	<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+	<style>.box { justify-content:center; display:flex; flex-wrap:wrap;  }; </style>
+
+	<script>
+		var renderPage = true;
+
+	if(navigator.userAgent.indexOf('MSIE')!==-1
+		|| navigator.appVersion.indexOf('Trident/') > 0){
+   		/* Microsoft Internet Explorer detected in. */
+   		alert("Please view this in a modern browser such as Chrome or Microsoft Edge.");
+   		renderPage = false;
+	}
+	</script>
+</head>
+<body>
+	<!-- Loader -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+
+	<!-- Page Content -->
+	<div class="container-fluid tm-main">
+		<div class="row tm-main-row">
+
+			<!-- Sidebar -->
+			<div id="tmSideBar" class="col-xl-3 col-lg-4 col-md-12 col-sm-12 sidebar">
+
+				<button id="tmMainNavToggle" class="menu-icon">&#9776;</button>
+
+				<div class="inner">
+					<nav id="tmMainNav" class="tm-main-nav">
+						<ul>
+							<li>
+								<a href="#intro" id="tmNavLink1" class="scrolly active" data-bg-img="constructive_bg_01.jpg" data-page="#tm-section-1">
+									<i class="fas fa-home tm-nav-fa-icon"></i>
+									<span> 검색결과 </span>
+								</a>
+							</li>
+							<li>
+								<a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2" data-page-type="carousel">
+									<i class="fas fa-map tm-nav-fa-icon"></i>
+									<span> 시각화 </span>
+								</a>
+							</li>
+							<li>
+								<a href="#company" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3">
+									<i class="fas fa-users tm-nav-fa-icon"></i>
+									<span> 사이트 소개 </span>
+								</a>
+							</li>
+							<li>
+								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-4">
+									<i class="fas fa-comments tm-nav-fa-icon"></i>
+									<span>Contact Us</span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+
+			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
+
+					<!-- section 1 -->
+					<section id="tm-section-1" class="tm-section">
+						<div class="ml-auto">
+
+							<div align="center">
+                                <br><br>
+                                <h2> 검색 회사 </h2>
+                                <table border="1" width = "1050" align="center" >
+                                    <tr>
+                                        <th> 회사명 </th> <th> 업종명 </th> <th> 결산기준일 </th>
+                                        <th> 자산총계 </th> <th> 자본총계 </th> <th> 부채총계 </th>
+                                    </tr>
+
+                                        {% for row in dataset %}
+                                        <tr>
+                                            <td> {{row[0]}}</td> <a href = "https://finance.naver.com/item/main.nhn?code={{row[0]}}" id="res"></a>{{row[1]}}</td></a>
+                                            <td> {{row[2]}}</td> <td> {{row[3]}}</td>
+                                            <td> {{row[4]}}</td> <td> {{row[5]}}</td>
+
+                                        </tr>
+                                        {% endfor %}
+
+
+									<!--
+									{% for table in dataset %}
+										{{title[loop.index]}}
+										{{ table|safe }}
+									{% endfor %}
+									-->
+									<!--
+									{% for i in texts %}
+										{%if loop.index < 30 %}
+											<a href = "https://ko.wikipedia.org/wiki/{{i[0]}}" id="res">{{i[0] if i[0] is not none}}  </a>
+										{% endif %}
+									{%endfor%}-->
+
+                                </table>
+                                    <p> 전체 레코드 수 : {{size}} 개</p>
+                                <br>
+                                <a href="/"> 이전 </a>
+                            </div>
+
+							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
+						</div>
+					</section>
+
+					<!-- section 2 -->
+					<section id="tm-section-2" class="tm-section tm-section-carousel">
+
+						<div class="box">
+							<div id="750494ce527f483394c1851b2ae6960a" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304051"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 534px; top: 289px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#2f4554;"></span>특수 목적용 기계 제조업: 136</div></div>
+							<script>
+								var chart_750494ce527f483394c1851b2ae6960a = echarts.init(
+									document.getElementById('750494ce527f483394c1851b2ae6960a'), 'white', {renderer: 'canvas'});
+								var option_750494ce527f483394c1851b2ae6960a = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 158
+										},
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 136
+										},
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 113
+										},
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 103
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 98
+										},
+										{
+											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+											"value": 92
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 91
+										},
+										{
+											"name": "\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+											"value": 68
+										},
+										{
+											"name": "1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
+											"value": 66
+										},
+										{
+											"name": "\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5",
+											"value": 59
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+										"1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
+										"\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "Cluster 5",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_750494ce527f483394c1851b2ae6960a.setOption(option_750494ce527f483394c1851b2ae6960a);
+							</script>
+						<br>                <div id="8efeb4d919c545b48f3ead697546982e" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304052"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 201px; top: 449px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#d48265;"></span>소프트웨어 개발 및 공급업: 84</div></div>
+							<script>
+								var chart_8efeb4d919c545b48f3ead697546982e = echarts.init(
+									document.getElementById('8efeb4d919c545b48f3ead697546982e'), 'white', {renderer: 'canvas'});
+								var option_8efeb4d919c545b48f3ead697546982e = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 157
+										},
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 146
+										},
+										{
+											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+											"value": 111
+										},
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 84
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 75
+										},
+										{
+											"name": "\uae30\ud0c0 \uae08\uc735\uc5c5",
+											"value": 72
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 65
+										},
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 63
+										},
+										{
+											"name": "\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 59
+										},
+										{
+											"name": "\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5",
+											"value": 54
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \uae08\uc735\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "Cluster 1",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_8efeb4d919c545b48f3ead697546982e.setOption(option_8efeb4d919c545b48f3ead697546982e);
+							</script>
+						<br>                <div id="a7e50c4992464e2d822c35c721d96e99" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304053"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 542px; top: 317px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#2f4554;"></span>특수 목적용 기계 제조업: 111</div></div>
+							<script>
+								var chart_a7e50c4992464e2d822c35c721d96e99 = echarts.init(
+									document.getElementById('a7e50c4992464e2d822c35c721d96e99'), 'white', {renderer: 'canvas'});
+								var option_a7e50c4992464e2d822c35c721d96e99 = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 134
+										},
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 111
+										},
+										{
+											"name": "\uc77c\ubc18 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 61
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 50
+										},
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 47
+										},
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 41
+										},
+										{
+											"name": "\ud1a0\ubaa9 \uac74\uc124\uc5c5",
+											"value": 39
+										},
+										{
+											"name": "\uac74\ubb3c \uac74\uc124\uc5c5",
+											"value": 32
+										},
+										{
+											"name": "\ud574\uc0c1 \uc6b4\uc1a1\uc5c5",
+											"value": 27
+										},
+										{
+											"name": "\ud56d\uacf5 \uc5ec\uac1d \uc6b4\uc1a1\uc5c5",
+											"value": 25
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uc77c\ubc18 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\ud1a0\ubaa9 \uac74\uc124\uc5c5",
+										"\uac74\ubb3c \uac74\uc124\uc5c5",
+										"\ud574\uc0c1 \uc6b4\uc1a1\uc5c5",
+										"\ud56d\uacf5 \uc5ec\uac1d \uc6b4\uc1a1\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "Cluster 4",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_a7e50c4992464e2d822c35c721d96e99.setOption(option_a7e50c4992464e2d822c35c721d96e99);
+							</script>
+						<br>                <div id="30aba7d47fb94235aeb1f5c90f88c135" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304054"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 416px; top: 286px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#2f4554;"></span>전자부품 제조업: 152</div></div>
+							<script>
+								var chart_30aba7d47fb94235aeb1f5c90f88c135 = echarts.init(
+									document.getElementById('30aba7d47fb94235aeb1f5c90f88c135'), 'white', {renderer: 'canvas'});
+								var option_30aba7d47fb94235aeb1f5c90f88c135 = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 171
+										},
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 152
+										},
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 132
+										},
+										{
+											"name": "\uae30\ud0c0 \uae08\uc735\uc5c5",
+											"value": 117
+										},
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 103
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 65
+										},
+										{
+											"name": "\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+											"value": 62
+										},
+										{
+											"name": "\uc77c\ubc18 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 62
+										},
+										{
+											"name": "1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
+											"value": 61
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 54
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \uae08\uc735\uc5c5",
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+										"\uc77c\ubc18 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "Cluster 0",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_30aba7d47fb94235aeb1f5c90f88c135.setOption(option_30aba7d47fb94235aeb1f5c90f88c135);
+							</script>
+						<br>                <div id="f61b8b6b7e9f47b39def56e66083dadb" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304055"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+							<script>
+								var chart_f61b8b6b7e9f47b39def56e66083dadb = echarts.init(
+									document.getElementById('f61b8b6b7e9f47b39def56e66083dadb'), 'white', {renderer: 'canvas'});
+								var option_f61b8b6b7e9f47b39def56e66083dadb = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 178
+										},
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 132
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 105
+										},
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 94
+										},
+										{
+											"name": "\uae30\ud0c0 \uae08\uc735\uc5c5",
+											"value": 92
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 91
+										},
+										{
+											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+											"value": 85
+										},
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 53
+										},
+										{
+											"name": "\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 49
+										},
+										{
+											"name": "\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+											"value": 49
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \uae08\uc735\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "Cluster2",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_f61b8b6b7e9f47b39def56e66083dadb.setOption(option_f61b8b6b7e9f47b39def56e66083dadb);
+							</script>
+						<br>                <div id="e5c11cdc354b434c8765bd62ff8cf971" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304056"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 238px; top: 122px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#546570;"></span>기초 의약물질 및 생물학적 제제 제조업: 51</div></div>
+							<script>
+								var chart_e5c11cdc354b434c8765bd62ff8cf971 = echarts.init(
+									document.getElementById('e5c11cdc354b434c8765bd62ff8cf971'), 'white', {renderer: 'canvas'});
+								var option_e5c11cdc354b434c8765bd62ff8cf971 = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 153
+										},
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 99
+										},
+										{
+											"name": "\uae30\ud0c0 \uae08\uc735\uc5c5",
+											"value": 85
+										},
+										{
+											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+											"value": 80
+										},
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 78
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 58
+										},
+										{
+											"name": "\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+											"value": 51
+										},
+										{
+											"name": "\uc758\ub8cc\uc6a9 \uae30\uae30 \uc81c\uc870\uc5c5",
+											"value": 51
+										},
+										{
+											"name": "\uae30\ucd08 \uc758\uc57d\ubb3c\uc9c8 \ubc0f \uc0dd\ubb3c\ud559\uc801 \uc81c\uc81c \uc81c\uc870\uc5c5",
+											"value": 51
+										},
+										{
+											"name": "\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 49
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \uae08\uc735\uc5c5",
+										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+										"\uc758\ub8cc\uc6a9 \uae30\uae30 \uc81c\uc870\uc5c5",
+										"\uae30\ucd08 \uc758\uc57d\ubb3c\uc9c8 \ubc0f \uc0dd\ubb3c\ud559\uc801 \uc81c\uc81c \uc81c\uc870\uc5c5",
+										"\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "Cluster7",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_e5c11cdc354b434c8765bd62ff8cf971.setOption(option_e5c11cdc354b434c8765bd62ff8cf971);
+							</script>
+						</div>
+
+					</section>
+
+					<!-- section 3 -->
+					<section id="tm-section-3" class="tm-section">
+						<div class="row mb-4">
+							<header class="col-xl-12"><h2 class="tm-text-shadow">Our Company</h2></header>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fab fa-apple tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>HTML Templates</h3>
+										<p>We provide a variety of templates for you at no cost. Please spread a word about <a href="https://plus.google.com/+tooplate" target="_parent">Tooplate</a> website. Thank you.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Free Images</h3>
+										<p>Photos by <a href="https://unsplash.com" target="_blank">Unsplash.com</a> website, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fab fa-fly mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Phasellus eleifend</h3>
+										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
+									<div class="media-body">
+										<h3>Phasellus eleifend</h3>
+										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<!-- section 4 -->
+					<section id="tm-section-4" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="row mb-4">
+								<div class="col-sm-12">
+									<header><h2 class="tm-text-shadow">Contact Us</h2></header>
+								</div>
+							</div>
+							<div class="row tm-page-4-content">
+								<div class="col-md-6 col-sm-12 tm-contact-col">
+									<div class="contact_message">
+										<form action="#contact" method="post" class="contact-form">
+											<div class="form-group">
+												<input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required>
+											</div>
+											<div class="form-group">
+												<input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required>
+											</div>
+											<div class="form-group">
+												<textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
+											</div>
+											<button type="submit" class="btn tm-btn-submit tm-btn ml-auto">Submit</button>
+										</form>
+									</div>
+								</div>
+								<div class="col-md-6 col-sm-12 tm-contact-col">
+									<div class="tm-address-box">
+										<p>Aliquam interdum, nisl sedd faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor.</p>
+										<p>Curabitur venenatis leo in augue convallis, vulputate sollicitudin ex maximus.</p>
+										<address>
+											120-240 Aliquam nec neque augue<br>
+											Suspendisse tincidunt nunc,<br>
+											vitae sagis justo 11000
+										</address>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>	<!-- .tm-content -->
+				<footer class="footer-link">
+					<p class="tm-copyright-text"> 남승현과 아이들
+
+                    - Design: Tooplate</p>
+				</footer>
+			</div>	<!-- row -->
+		</div>
+		<div id="preload-01"></div>
+		<div id="preload-02"></div>
+		<div id="preload-03"></div>
+		<div id="preload-04"></div>
+
+		<script type="text/javascript" src="./static/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="./static/js/jquery.magnific-popup.min.js"></script>
+		<script type="text/javascript" src="./static/js/jquery.backstretch.min.js"></script>
+		<script type="text/javascript" src="./static/slick/slick.min.js"></script> <!-- Slick Carousel -->
+
+		<script>
+
+		var sidebarVisible = false;
+		var currentPageID = "#tm-section-1";
+
+		// Setup Carousel
+		function setupCarousel() {
+
+			// If current page isn't Carousel page, don't do anything.
+			if($('#tm-section-2').css('display') == "none") {
+			}
+			else {	// If current page is Carousel page, set up the Carousel.
+
+				var slider = $('.tm-img-slider');
+				var windowWidth = $(window).width();
+
+				if (slider.hasClass('slick-initialized')) {
+					slider.slick('destroy');
+				}
+
+				if(windowWidth < 640) {
+					slider.slick({
+	              		dots: true,
+	              		infinite: false,
+	              		slidesToShow: 1,
+	              		slidesToScroll: 1
+	              	});
+				}
+				else if(windowWidth < 992) {
+					slider.slick({
+	              		dots: true,
+	              		infinite: false,
+	              		slidesToShow: 2,
+	              		slidesToScroll: 1
+	              	});
+				}
+				else {
+					// Slick carousel
+	              	slider.slick({
+	              		dots: true,
+	              		infinite: false,
+	              		slidesToShow: 3,
+	              		slidesToScroll: 2
+	              	});
+				}
+
+				// Init Magnific Popup
+				$('.tm-img-slider').magnificPopup({
+				  delegate: 'a', // child items selector, by clicking on it popup will open
+				  type: 'image',
+				  gallery: {enabled:true}
+				  // other options
+				});
+      		}
+  		}
+
+  		// Setup Nav
+  		function setupNav() {
+  			// Add Event Listener to each Nav item
+	     	$(".tm-main-nav a").click(function(e){
+	     		e.preventDefault();
+
+		    	var currentNavItem = $(this);
+		    	changePage(currentNavItem);
+
+		    	setupCarousel();
+		    	setupFooter();
+
+		    	// Hide the nav on mobile
+		    	$("#tmSideBar").removeClass("show");
+		    });
+  		}
+
+  		function changePage(currentNavItem) {
+  			// Update Nav items
+  			$(".tm-main-nav a").removeClass("active");
+     		currentNavItem.addClass("active");
+
+	    	$(currentPageID).hide();
+
+	    	// Show current page
+	    	currentPageID = currentNavItem.data("page");
+	    	$(currentPageID).fadeIn(1000);
+
+	    	// Change background image
+	    	var bgImg = currentNavItem.data("bgImg");
+	    	$.backstretch("/static/img/" + bgImg);
+  		}
+
+  		// Setup Nav Toggle Button
+  		function setupNavToggle() {
+
+			$("#tmMainNavToggle").on("click", function(){
+				$(".sidebar").toggleClass("show");
+			});
+  		}
+
+  		// If there is enough room, stick the footer at the bottom of page content.
+  		// If not, place it after the page content
+  		function setupFooter() {
+
+  			var padding = 100;
+  			var footerPadding = 40;
+  			var mainContent = $("section"+currentPageID);
+  			var mainContentHeight = mainContent.outerHeight(true);
+  			var footer = $(".footer-link");
+  			var footerHeight = footer.outerHeight(true);
+  			var totalPageHeight = mainContentHeight + footerHeight + footerPadding + padding;
+  			var windowHeight = $(window).height();
+
+  			if(totalPageHeight > windowHeight){
+  				$(".tm-content").css("margin-bottom", footerHeight + footerPadding + "px");
+  				footer.css("bottom", footerHeight + "px");
+  			}
+  			else {
+  				$(".tm-content").css("margin-bottom", "0");
+  				footer.css("bottom", "20px");
+  			}
+  		}
+
+  		// Everything is loaded including images.
+      	$(window).on("load", function(){
+
+      		// Render the page on modern browser only.
+      		if(renderPage) {
+				// Remove loader
+		      	$('body').addClass('loaded');
+
+		      	// Page transition
+		      	var allPages = $(".tm-section");
+
+		      	// Handle click of "Continue", which changes to next page
+		      	// The link contains data-nav-link attribute, which holds the nav item ID
+		      	// Nav item ID is then used to access and trigger click on the corresponding nav item
+		      	var linkToAnotherPage = $("a.tm-btn[data-nav-link]");
+
+			    if(linkToAnotherPage != null) {
+
+			    	linkToAnotherPage.on("click", function(){
+			    		var navItemToHighlight = linkToAnotherPage.data("navLink");
+			    		$("a" + navItemToHighlight).click();
+			    	});
+			    }
+
+		      	// Hide all pages
+		      	allPages.hide();
+
+		      	$("#tm-section-1").fadeIn();
+
+		     	// Set up background first page
+		     	var bgImg = $("#tmNavLink1").data("bgImg");
+
+		     	$.backstretch("/static/img/" + bgImg, {fade: 500});
+
+		     	// Setup Carousel, Nav, and Nav Toggle
+			    setupCarousel();
+			    setupNav();
+			    setupNavToggle();
+			    setupFooter();
+
+			    // Resize Carousel upon window resize
+			    $(window).resize(function() {
+			    	setupCarousel();
+			    	setupFooter();
+			    });
+      		}
+		});
+
+		</script>
+    </body>
+</html>
