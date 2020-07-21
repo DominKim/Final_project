@@ -13,7 +13,19 @@
 	<link rel="stylesheet" href="./static/slick/slick-theme.css" type="text/css"/>
 	<link rel="stylesheet" href="./static/css/tooplate-style.css">
 	<script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
-	<style>.box { justify-content:center; display:flex; flex-wrap:wrap;  }; </style>
+	<script type="text/javascript" src="https://assets.pyecharts.org/assets/themes/roma.js"></script>
+	<style>.box { justify-content:center; display:flex; flex-wrap:wrap;  };
+	table {
+			width: 100%;
+			border-top: none;
+			border-collapse: separate ;
+		  }
+		  th, td {
+			border-bottom: none;
+			padding: 10px;
+			text-align: center;
+		  }
+		  tr:nth-child(even) {background-color: #C1BCC0;}</style>
 
 	<script>
 		var renderPage = true;
@@ -53,21 +65,21 @@
 								</a>
 							</li>
 							<li>
-								<a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-2" data-page-type="carousel">
+								<a href="#products" id="tmNavLink2" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-2" data-page-type="carousel">
 									<i class="fas fa-map tm-nav-fa-icon"></i>
-									<span> 시각화 </span>
+									<span> 클러스터별 특성 </span>
 								</a>
 							</li>
 							<li>
-								<a href="#company" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3">
+								<a href="#company" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-3">
 									<i class="fas fa-users tm-nav-fa-icon"></i>
-									<span> 사이트 소개 </span>
+									<span> 시각화자료 </span>
 								</a>
 							</li>
 							<li>
-								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-4">
+								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-4">
 									<i class="fas fa-comments tm-nav-fa-icon"></i>
-									<span>Contact Us</span>
+									<span>Contact</span>
 								</a>
 							</li>
 						</ul>
@@ -92,7 +104,7 @@
 
                                         {% for row in dataset %}
                                         <tr>
-                                            <td> {{row[0]}}</td> <td> <a href = "https://finance.naver.com/item/main.nhn?code={{row[0]}}" id="res">{{row[1]}}</td></a>
+                                            <td> {{row[0]}}</td> <td> <a href = "https://finance.naver.com/item/main.nhn?code={{row[0]}}" id="res" target="_blank">{{row[1]}}</td></a>
                                             <td> {{row[2]}}</td> <td> {{row[3]}}</td>
                                             <td> {{row[4]}}</td> <td> {{row[5]}}</td>
 											<td> {{row[6]}}</td>
@@ -127,327 +139,14 @@
 
 					<!-- section 2 -->
 					<section id="tm-section-2" class="tm-section tm-section-carousel">
+						<style>.box { justify-content:center; display:flex; flex-wrap:wrap;  }; </style>
 
 						<div class="box">
-							<div id="750494ce527f483394c1851b2ae6960a" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304051"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 534px; top: 289px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#2f4554;"></span>특수 목적용 기계 제조업: 136</div></div>
+										<div id="8b5ec558bbd947fab2f4445d2e97e68c" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951366"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
 							<script>
-								var chart_750494ce527f483394c1851b2ae6960a = echarts.init(
-									document.getElementById('750494ce527f483394c1851b2ae6960a'), 'white', {renderer: 'canvas'});
-								var option_750494ce527f483394c1851b2ae6960a = {
-							"animation": true,
-							"animationThreshold": 2000,
-							"animationDuration": 1000,
-							"animationEasing": "cubicOut",
-							"animationDelay": 0,
-							"animationDurationUpdate": 300,
-							"animationEasingUpdate": "cubicOut",
-							"animationDelayUpdate": 0,
-							"color": [
-								"#c23531",
-								"#2f4554",
-								"#61a0a8",
-								"#d48265",
-								"#749f83",
-								"#ca8622",
-								"#bda29a",
-								"#6e7074",
-								"#546570",
-								"#c4ccd3",
-								"#f05b72",
-								"#ef5b9c",
-								"#f47920",
-								"#905a3d",
-								"#fab27b",
-								"#2a5caa",
-								"#444693",
-								"#726930",
-								"#b2d235",
-								"#6d8346",
-								"#ac6767",
-								"#1d953f",
-								"#6950a1",
-								"#918597"
-							],
-							"series": [
-								{
-									"type": "pie",
-									"clockwise": true,
-									"data": [
-										{
-											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
-											"value": 158
-										},
-										{
-											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
-											"value": 136
-										},
-										{
-											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
-											"value": 113
-										},
-										{
-											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
-											"value": 103
-										},
-										{
-											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
-											"value": 98
-										},
-										{
-											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
-											"value": 92
-										},
-										{
-											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
-											"value": 91
-										},
-										{
-											"name": "\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
-											"value": 68
-										},
-										{
-											"name": "1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
-											"value": 66
-										},
-										{
-											"name": "\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5",
-											"value": 59
-										}
-									],
-									"radius": "65%",
-									"center": [
-										"40%",
-										"50%"
-									],
-									"label": {
-										"show": true,
-										"position": "top",
-										"margin": 8,
-										"formatter": "{b}: {c}"
-									},
-									"rippleEffect": {
-										"show": true,
-										"brushType": "stroke",
-										"scale": 2.5,
-										"period": 4
-									}
-								}
-							],
-							"legend": [
-								{
-									"data": [
-										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
-										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
-										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
-										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
-										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
-										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
-										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
-										"\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
-										"1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
-										"\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5"
-									],
-									"selected": {},
-									"type": "scroll",
-									"show": true,
-									"left": "80%",
-									"top": "20%",
-									"orient": "vertical",
-									"padding": 5,
-									"itemGap": 10,
-									"itemWidth": 25,
-									"itemHeight": 14
-								}
-							],
-							"tooltip": {
-								"show": true,
-								"trigger": "item",
-								"triggerOn": "mousemove|click",
-								"axisPointer": {
-									"type": "line"
-								},
-								"showContent": true,
-								"alwaysShowContent": false,
-								"showDelay": 0,
-								"hideDelay": 100,
-								"textStyle": {
-									"fontSize": 14
-								},
-								"borderWidth": 0,
-								"padding": 5
-							},
-							"title": [
-								{
-									"text": "Cluster 5",
-									"padding": 5,
-									"itemGap": 10
-								}
-							]
-						};
-								chart_750494ce527f483394c1851b2ae6960a.setOption(option_750494ce527f483394c1851b2ae6960a);
-							</script>
-						<br>                <div id="8efeb4d919c545b48f3ead697546982e" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304052"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 201px; top: 449px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#d48265;"></span>소프트웨어 개발 및 공급업: 84</div></div>
-							<script>
-								var chart_8efeb4d919c545b48f3ead697546982e = echarts.init(
-									document.getElementById('8efeb4d919c545b48f3ead697546982e'), 'white', {renderer: 'canvas'});
-								var option_8efeb4d919c545b48f3ead697546982e = {
-							"animation": true,
-							"animationThreshold": 2000,
-							"animationDuration": 1000,
-							"animationEasing": "cubicOut",
-							"animationDelay": 0,
-							"animationDurationUpdate": 300,
-							"animationEasingUpdate": "cubicOut",
-							"animationDelayUpdate": 0,
-							"color": [
-								"#c23531",
-								"#2f4554",
-								"#61a0a8",
-								"#d48265",
-								"#749f83",
-								"#ca8622",
-								"#bda29a",
-								"#6e7074",
-								"#546570",
-								"#c4ccd3",
-								"#f05b72",
-								"#ef5b9c",
-								"#f47920",
-								"#905a3d",
-								"#fab27b",
-								"#2a5caa",
-								"#444693",
-								"#726930",
-								"#b2d235",
-								"#6d8346",
-								"#ac6767",
-								"#1d953f",
-								"#6950a1",
-								"#918597"
-							],
-							"series": [
-								{
-									"type": "pie",
-									"clockwise": true,
-									"data": [
-										{
-											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
-											"value": 157
-										},
-										{
-											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
-											"value": 146
-										},
-										{
-											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
-											"value": 111
-										},
-										{
-											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
-											"value": 84
-										},
-										{
-											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
-											"value": 75
-										},
-										{
-											"name": "\uae30\ud0c0 \uae08\uc735\uc5c5",
-											"value": 72
-										},
-										{
-											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
-											"value": 65
-										},
-										{
-											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
-											"value": 63
-										},
-										{
-											"name": "\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
-											"value": 59
-										},
-										{
-											"name": "\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5",
-											"value": 54
-										}
-									],
-									"radius": "65%",
-									"center": [
-										"40%",
-										"50%"
-									],
-									"label": {
-										"show": true,
-										"position": "top",
-										"margin": 8,
-										"formatter": "{b}: {c}"
-									},
-									"rippleEffect": {
-										"show": true,
-										"brushType": "stroke",
-										"scale": 2.5,
-										"period": 4
-									}
-								}
-							],
-							"legend": [
-								{
-									"data": [
-										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
-										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
-										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
-										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
-										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
-										"\uae30\ud0c0 \uae08\uc735\uc5c5",
-										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
-										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
-										"\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
-										"\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5"
-									],
-									"selected": {},
-									"type": "scroll",
-									"show": true,
-									"left": "80%",
-									"top": "20%",
-									"orient": "vertical",
-									"padding": 5,
-									"itemGap": 10,
-									"itemWidth": 25,
-									"itemHeight": 14
-								}
-							],
-							"tooltip": {
-								"show": true,
-								"trigger": "item",
-								"triggerOn": "mousemove|click",
-								"axisPointer": {
-									"type": "line"
-								},
-								"showContent": true,
-								"alwaysShowContent": false,
-								"showDelay": 0,
-								"hideDelay": 100,
-								"textStyle": {
-									"fontSize": 14
-								},
-								"borderWidth": 0,
-								"padding": 5
-							},
-							"title": [
-								{
-									"text": "Cluster 1",
-									"padding": 5,
-									"itemGap": 10
-								}
-							]
-						};
-								chart_8efeb4d919c545b48f3ead697546982e.setOption(option_8efeb4d919c545b48f3ead697546982e);
-							</script>
-						<br>                <div id="a7e50c4992464e2d822c35c721d96e99" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304053"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 542px; top: 317px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#2f4554;"></span>특수 목적용 기계 제조업: 111</div></div>
-							<script>
-								var chart_a7e50c4992464e2d822c35c721d96e99 = echarts.init(
-									document.getElementById('a7e50c4992464e2d822c35c721d96e99'), 'white', {renderer: 'canvas'});
-								var option_a7e50c4992464e2d822c35c721d96e99 = {
+								var chart_8b5ec558bbd947fab2f4445d2e97e68c = echarts.init(
+									document.getElementById('8b5ec558bbd947fab2f4445d2e97e68c'), 'white', {renderer: 'canvas'});
+								var option_8b5ec558bbd947fab2f4445d2e97e68c = {
 							"animation": true,
 							"animationThreshold": 2000,
 							"animationDuration": 1000,
@@ -592,19 +291,19 @@
 							},
 							"title": [
 								{
-									"text": "Cluster 4",
+									"text": "LL1",
 									"padding": 5,
 									"itemGap": 10
 								}
 							]
 						};
-								chart_a7e50c4992464e2d822c35c721d96e99.setOption(option_a7e50c4992464e2d822c35c721d96e99);
+								chart_8b5ec558bbd947fab2f4445d2e97e68c.setOption(option_8b5ec558bbd947fab2f4445d2e97e68c);
 							</script>
-						<br>                <div id="30aba7d47fb94235aeb1f5c90f88c135" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304054"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 416px; top: 286px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#2f4554;"></span>전자부품 제조업: 152</div></div>
+						<br>                <div id="62dfa439d68a46cb995a74914f041633" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951367"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 392px; top: 195px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#c23531;"></span>자동차 신품 부품 제조업: 171</div></div>
 							<script>
-								var chart_30aba7d47fb94235aeb1f5c90f88c135 = echarts.init(
-									document.getElementById('30aba7d47fb94235aeb1f5c90f88c135'), 'white', {renderer: 'canvas'});
-								var option_30aba7d47fb94235aeb1f5c90f88c135 = {
+								var chart_62dfa439d68a46cb995a74914f041633 = echarts.init(
+									document.getElementById('62dfa439d68a46cb995a74914f041633'), 'white', {renderer: 'canvas'});
+								var option_62dfa439d68a46cb995a74914f041633 = {
 							"animation": true,
 							"animationThreshold": 2000,
 							"animationDuration": 1000,
@@ -749,19 +448,333 @@
 							},
 							"title": [
 								{
-									"text": "Cluster 0",
+									"text": "LL2",
 									"padding": 5,
 									"itemGap": 10
 								}
 							]
 						};
-								chart_30aba7d47fb94235aeb1f5c90f88c135.setOption(option_30aba7d47fb94235aeb1f5c90f88c135);
+								chart_62dfa439d68a46cb995a74914f041633.setOption(option_62dfa439d68a46cb995a74914f041633);
 							</script>
-						<br>                <div id="f61b8b6b7e9f47b39def56e66083dadb" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304055"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+						<br>                <div id="eb68ea20bc624fedbe64be0c4c1bcb79" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951368"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
 							<script>
-								var chart_f61b8b6b7e9f47b39def56e66083dadb = echarts.init(
-									document.getElementById('f61b8b6b7e9f47b39def56e66083dadb'), 'white', {renderer: 'canvas'});
-								var option_f61b8b6b7e9f47b39def56e66083dadb = {
+								var chart_eb68ea20bc624fedbe64be0c4c1bcb79 = echarts.init(
+									document.getElementById('eb68ea20bc624fedbe64be0c4c1bcb79'), 'white', {renderer: 'canvas'});
+								var option_eb68ea20bc624fedbe64be0c4c1bcb79 = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 158
+										},
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 136
+										},
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 113
+										},
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 103
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 98
+										},
+										{
+											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+											"value": 92
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 91
+										},
+										{
+											"name": "\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+											"value": 68
+										},
+										{
+											"name": "1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
+											"value": 66
+										},
+										{
+											"name": "\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5",
+											"value": 59
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\ubc18\ub3c4\uccb4 \uc81c\uc870\uc5c5",
+										"1\ucc28 \ucca0\uac15 \uc81c\uc870\uc5c5",
+										"\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "LL3",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_eb68ea20bc624fedbe64be0c4c1bcb79.setOption(option_eb68ea20bc624fedbe64be0c4c1bcb79);
+							</script>
+						<br>                <div id="ad75fc3cf859495187c604851b539373" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951369"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+							<script>
+								var chart_ad75fc3cf859495187c604851b539373 = echarts.init(
+									document.getElementById('ad75fc3cf859495187c604851b539373'), 'white', {renderer: 'canvas'});
+								var option_ad75fc3cf859495187c604851b539373 = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"color": [
+								"#c23531",
+								"#2f4554",
+								"#61a0a8",
+								"#d48265",
+								"#749f83",
+								"#ca8622",
+								"#bda29a",
+								"#6e7074",
+								"#546570",
+								"#c4ccd3",
+								"#f05b72",
+								"#ef5b9c",
+								"#f47920",
+								"#905a3d",
+								"#fab27b",
+								"#2a5caa",
+								"#444693",
+								"#726930",
+								"#b2d235",
+								"#6d8346",
+								"#ac6767",
+								"#1d953f",
+								"#6950a1",
+								"#918597"
+							],
+							"series": [
+								{
+									"type": "pie",
+									"clockwise": true,
+									"data": [
+										{
+											"name": "\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+											"value": 157
+										},
+										{
+											"name": "\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 146
+										},
+										{
+											"name": "\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+											"value": 111
+										},
+										{
+											"name": "\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+											"value": 84
+										},
+										{
+											"name": "\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 75
+										},
+										{
+											"name": "\uae30\ud0c0 \uae08\uc735\uc5c5",
+											"value": 72
+										},
+										{
+											"name": "\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+											"value": 65
+										},
+										{
+											"name": "\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+											"value": 63
+										},
+										{
+											"name": "\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+											"value": 59
+										},
+										{
+											"name": "\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5",
+											"value": 54
+										}
+									],
+									"radius": "65%",
+									"center": [
+										"40%",
+										"50%"
+									],
+									"label": {
+										"show": true,
+										"position": "top",
+										"margin": 8,
+										"formatter": "{b}: {c}"
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\ud2b9\uc218 \ubaa9\uc801\uc6a9 \uae30\uacc4 \uc81c\uc870\uc5c5",
+										"\uc804\uc790\ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\uc758\uc57d\ud488 \uc81c\uc870\uc5c5",
+										"\uc18c\ud504\ud2b8\uc6e8\uc5b4 \uac1c\ubc1c \ubc0f \uacf5\uae09\uc5c5",
+										"\uae30\ud0c0 \ud654\ud559\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uae30\ud0c0 \uae08\uc735\uc5c5",
+										"\ud1b5\uc2e0 \ubc0f \ubc29\uc1a1 \uc7a5\ube44 \uc81c\uc870\uc5c5",
+										"\uc790\ub3d9\ucc28 \uc2e0\ud488 \ubd80\ud488 \uc81c\uc870\uc5c5",
+										"\ud50c\ub77c\uc2a4\ud2f1\uc81c\ud488 \uc81c\uc870\uc5c5",
+										"\uae30\ucd08 \ud654\ud559\ubb3c\uc9c8 \uc81c\uc870\uc5c5"
+									],
+									"selected": {},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"top": "20%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"title": [
+								{
+									"text": "LL4",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_ad75fc3cf859495187c604851b539373.setOption(option_ad75fc3cf859495187c604851b539373);
+							</script>
+						<br>                <div id="6c643333090844d5aa8900a09872ada5" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951370"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+							<script>
+								var chart_6c643333090844d5aa8900a09872ada5 = echarts.init(
+									document.getElementById('6c643333090844d5aa8900a09872ada5'), 'white', {renderer: 'canvas'});
+								var option_6c643333090844d5aa8900a09872ada5 = {
 							"animation": true,
 							"animationThreshold": 2000,
 							"animationDuration": 1000,
@@ -912,13 +925,13 @@
 								}
 							]
 						};
-								chart_f61b8b6b7e9f47b39def56e66083dadb.setOption(option_f61b8b6b7e9f47b39def56e66083dadb);
+								chart_6c643333090844d5aa8900a09872ada5.setOption(option_6c643333090844d5aa8900a09872ada5);
 							</script>
-						<br>                <div id="e5c11cdc354b434c8765bd62ff8cf971" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1594969304056"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgba(50, 50, 50, 0.7); border-width: 0px; border-color: rgb(51, 51, 51); border-radius: 4px; color: rgb(255, 255, 255); font: 14px / 21px &quot;Microsoft YaHei&quot;; padding: 5px; left: 238px; top: 122px; pointer-events: none;"><span style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#546570;"></span>기초 의약물질 및 생물학적 제제 제조업: 51</div></div>
+						<br>                <div id="aee620a786074134bc8db738db72ba43" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951371"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
 							<script>
-								var chart_e5c11cdc354b434c8765bd62ff8cf971 = echarts.init(
-									document.getElementById('e5c11cdc354b434c8765bd62ff8cf971'), 'white', {renderer: 'canvas'});
-								var option_e5c11cdc354b434c8765bd62ff8cf971 = {
+								var chart_aee620a786074134bc8db738db72ba43 = echarts.init(
+									document.getElementById('aee620a786074134bc8db738db72ba43'), 'white', {renderer: 'canvas'});
+								var option_aee620a786074134bc8db738db72ba43 = {
 							"animation": true,
 							"animationThreshold": 2000,
 							"animationDuration": 1000,
@@ -1069,9 +1082,237 @@
 								}
 							]
 						};
-								chart_e5c11cdc354b434c8765bd62ff8cf971.setOption(option_e5c11cdc354b434c8765bd62ff8cf971);
+								chart_aee620a786074134bc8db738db72ba43.setOption(option_aee620a786074134bc8db738db72ba43);
 							</script>
-						</div>
+						<br>                <div id="f7b105f9b21046d4858713cd86b31bf3" class="chart-container" style="width: 900px; height: 500px; -webkit-tap-highlight-color: transparent; user-select: none; position: relative;" _echarts_instance_="ec_1595226951372"><div style="position: relative; width: 900px; height: 500px; padding: 0px; margin: 0px; border-width: 0px;"><canvas data-zr-dom-id="zr_0" width="900" height="500" style="position: absolute; left: 0px; top: 0px; width: 900px; height: 500px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas></div><div></div></div>
+							<script>
+								var chart_f7b105f9b21046d4858713cd86b31bf3 = echarts.init(
+									document.getElementById('f7b105f9b21046d4858713cd86b31bf3'), 'roma', {renderer: 'canvas'});
+								var option_f7b105f9b21046d4858713cd86b31bf3 = {
+							"animation": true,
+							"animationThreshold": 2000,
+							"animationDuration": 1000,
+							"animationEasing": "cubicOut",
+							"animationDelay": 0,
+							"animationDurationUpdate": 300,
+							"animationEasingUpdate": "cubicOut",
+							"animationDelayUpdate": 0,
+							"series": [
+								{
+									"type": "bar",
+									"name": "\ubd80\ucc44\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4",
+									"legendHoverLink": true,
+									"data": [
+										{
+											"value": 0.821925,
+											"percent": 0.8215643332576998
+										},
+										{
+											"value": 0.625345,
+											"percent": 0.6253456253456253
+										},
+										{
+											"value": 0.493503,
+											"percent": 0.4934704309515573
+										},
+										{
+											"value": 0.369894,
+											"percent": 0.36990620690482784
+										},
+										{
+											"value": 0.241013,
+											"percent": 0.241013241013241
+										},
+										{
+											"value": 0.114436,
+											"percent": 0.1842772693675835
+										}
+									],
+									"showBackground": false,
+									"stack": "stack1",
+									"barMinHeight": 0,
+									"barCategoryGap": "50%",
+									"barGap": "30%",
+									"large": false,
+									"largeThreshold": 400,
+									"seriesLayoutBy": "column",
+									"datasetIndex": 0,
+									"clip": true,
+									"zlevel": 0,
+									"z": 2,
+									"label": {
+										"show": true,
+										"position": "right",
+										"margin": 8,
+										"formatter": function(x){return Number(x.data.percent * 100).toFixed() + '%';}
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								},
+								{
+									"type": "bar",
+									"name": "\uc790\ubcf8\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4",
+									"legendHoverLink": true,
+									"data": [
+										{
+											"value": 0.178514,
+											"percent": 0.17843566674230013
+										},
+										{
+											"value": 0.374654,
+											"percent": 0.3746543746543746
+										},
+										{
+											"value": 0.506563,
+											"percent": 0.5065295690484428
+										},
+										{
+											"value": 0.630073,
+											"percent": 0.6300937930951721
+										},
+										{
+											"value": 0.758986,
+											"percent": 0.7589867589867589
+										},
+										{
+											"value": 0.885561,
+											"percent": 0.8855636566909701
+										}
+									],
+									"showBackground": false,
+									"stack": "stack1",
+									"barMinHeight": 0,
+									"barCategoryGap": "50%",
+									"barGap": "30%",
+									"large": false,
+									"largeThreshold": 400,
+									"seriesLayoutBy": "column",
+									"datasetIndex": 0,
+									"clip": true,
+									"zlevel": 0,
+									"z": 2,
+									"label": {
+										"show": true,
+										"position": "right",
+										"margin": 8,
+										"formatter": function(x){return Number(x.data.percent * 100).toFixed() + '%';}
+									},
+									"rippleEffect": {
+										"show": true,
+										"brushType": "stroke",
+										"scale": 2.5,
+										"period": 4
+									}
+								}
+							],
+							"legend": [
+								{
+									"data": [
+										"\ubd80\ucc44\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4",
+										"\uc790\ubcf8\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4"
+									],
+									"selected": {
+										"\ubd80\ucc44\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4": true,
+										"\uc790\ubcf8\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4": true
+									},
+									"type": "scroll",
+									"show": true,
+									"left": "80%",
+									"orient": "vertical",
+									"padding": 5,
+									"itemGap": 10,
+									"itemWidth": 25,
+									"itemHeight": 14
+								}
+							],
+							"tooltip": {
+								"show": true,
+								"trigger": "item",
+								"triggerOn": "mousemove|click",
+								"axisPointer": {
+									"type": "line"
+								},
+								"showContent": true,
+								"alwaysShowContent": false,
+								"showDelay": 0,
+								"hideDelay": 100,
+								"textStyle": {
+									"fontSize": 14
+								},
+								"borderWidth": 0,
+								"padding": 5
+							},
+							"xAxis": [
+								{
+									"show": true,
+									"scale": false,
+									"nameLocation": "end",
+									"nameGap": 15,
+									"gridIndex": 0,
+									"inverse": false,
+									"offset": 0,
+									"splitNumber": 5,
+									"minInterval": 0,
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"show": true,
+											"width": 1,
+											"opacity": 1,
+											"curveness": 0,
+											"type": "solid"
+										}
+									},
+									"data": [
+										"LL1",
+										"LL2",
+										"LL3",
+										"LL4",
+										"LL5",
+										"LL6"
+									]
+								}
+							],
+							"yAxis": [
+								{
+									"show": true,
+									"scale": false,
+									"nameLocation": "end",
+									"nameGap": 15,
+									"gridIndex": 0,
+									"inverse": false,
+									"offset": 0,
+									"splitNumber": 5,
+									"minInterval": 0,
+									"splitLine": {
+										"show": false,
+										"lineStyle": {
+											"show": true,
+											"width": 1,
+											"opacity": 1,
+											"curveness": 0,
+											"type": "solid"
+										}
+									}
+								}
+							],
+							"title": [
+								{
+									"text": "Cluster \ubcc4 \ubd80\ucc44\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4, \uc790\ubcf8\ucd1d\uacc4per\uc790\uc0b0\ucd1d\uacc4",
+									"padding": 5,
+									"itemGap": 10
+								}
+							]
+						};
+								chart_f7b105f9b21046d4858713cd86b31bf3.setOption(option_f7b105f9b21046d4858713cd86b31bf3);
+							</script>
+						<br>    </div>
+							<script>
+							</script>
 
 					</section>
 
@@ -1161,9 +1402,10 @@
 					</section>
 				</div>	<!-- .tm-content -->
 				<footer class="footer-link">
-					<p class="tm-copyright-text"> 남승현과 아이들
+					<img src="{{ url_for('static', filename='36.png') }}" width="300" height="150">
+					<!--<p class="tm-copyright-text"> MR.MARKET
 
-                    - Design: Tooplate</p>
+                    - Design: Tooplate</p>-->
 				</footer>
 			</div>	<!-- row -->
 		</div>

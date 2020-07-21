@@ -52,16 +52,18 @@
 									<span> 검색창 </span>
 								</a>
 							</li>
+							<!--
 							<li>
 								<a href="#company" class="scrolly" data-bg-img="constructive_bg_03.jpg" data-page="#tm-section-3">
 									<i class="fas fa-users tm-nav-fa-icon"></i>
 									<span> 사이트 소개 </span>
 								</a>
 							</li>
+							-->
 							<li>
 								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_04.jpg" data-page="#tm-section-4">
 									<i class="fas fa-comments tm-nav-fa-icon"></i>
-									<span>Contact Us</span>
+									<span> 구성원 소개 </span>
 								</a>
 							</li>
 						</ul>
@@ -76,9 +78,8 @@
 						<div class="ml-auto">
 							<!--<header class="mb-4"><h1 class="tm-text-shadow"> FS </h1></header>-->
 
-							<img src="{{ url_for('static', filename='fs.jpg') }}" width="200" height="200">
-
-							<p class="mb-5 tm-font-big"> Show financial statements            similar to the company you want. </p>
+							<img src="{{ url_for('static', filename='35.png') }}" width="250" height="200">
+							<p class="mb-5 tm-font-big"> Show financial statements similar to the company you want. </p>
 
 							<div class="submit-form">
 								<form id="form-submit" action="/result" method="post">
@@ -104,9 +105,10 @@
 
 
 					<!-- section 3 -->
+					<!--
 					<section id="tm-section-3" class="tm-section">
 						<div class="row mb-4">
-							<header class="col-xl-12"><h2 class="tm-text-shadow">Our Company</h2></header>
+							<header class="col-xl-12"><h2 class="tm-text-shadow"> MR.market </h2></header>
 						</div>
 						<div class="row">
 							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
@@ -147,41 +149,50 @@
 							</div>
 						</div>
 					</section>
-
+					-->
 					<!-- section 4 -->
 					<section id="tm-section-4" class="tm-section">
-						<div class="tm-bg-transparent-black tm-contact-box-pad">
-							<div class="row mb-4">
-								<div class="col-sm-12">
-									<header><h2 class="tm-text-shadow">Contact Us</h2></header>
-								</div>
-							</div>
-							<div class="row tm-page-4-content">
-								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="contact_message">
-										<form action="#contact" method="post" class="contact-form">
-											<div class="form-group">
-												<input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Name" required>
-											</div>
-											<div class="form-group">
-												<input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Email" required>
-											</div>
-											<div class="form-group">
-												<textarea id="contact_message" name="contact_message" class="form-control" rows="9" placeholder="Message" required></textarea>
-											</div>
-											<button type="submit" class="btn tm-btn-submit tm-btn ml-auto">Submit</button>
-										</form>
+						<div class="row mb-4">
+							<header class="col-xl-12"><h1 class="tm-text-shadow"> crew </h1></header>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<!--<i class="fab fa-apple tm-icon-circled tm-icon-media"></i>-->
+									<img src="{{ url_for('static', filename='fs.jpg') }}" width="100" height="100">
+									<div class="media-body">
+										<h3> 남승현 / ENTJ </h3>
+										<p> <a href="https://github.com/nsh92" target="_blank"> 남승현 </a> </p>
 									</div>
 								</div>
-								<div class="col-md-6 col-sm-12 tm-contact-col">
-									<div class="tm-address-box">
-										<p>Aliquam interdum, nisl sedd faucibus tempor, massa velit laoreet ipsum, et faucibus sapien magna at enim. Suspendisse a dictum tortor.</p>
-										<p>Curabitur venenatis leo in augue convallis, vulputate sollicitudin ex maximus.</p>
-										<address>
-											120-240 Aliquam nec neque augue<br>
-											Suspendisse tincidunt nunc,<br>
-											vitae sagis justo 11000
-										</address>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<!--<i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>-->
+									<img src="{{ url_for('static', filename='domin.jpg') }}" width="100" height="100">
+									<div class="media-body">
+										<h3> 김도민 / ISFJ </h3>
+										<p> <a href="https://github.com/DominKim" target="_blank"> 김도민 </a> </p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<!--<i class="fab fa-fly mr-4 tm-icon-circled tm-icon-media"></i>-->
+									<img src="{{ url_for('static', filename='mh.jpg') }}" width="100" height="100">
+									<div class="media-body">
+										<h3> 양명호 / ESPJ </h3>
+										<p> <a href="https://github.com/yangmyongho" target="_blank"> 양명호 </a> </p>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
+								<div class="media tm-bg-transparent-black tm-border-white">
+									<!--<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>-->
+									<img src="{{ url_for('static', filename='sumi.jpg') }}" width="100" height="100">
+									<div class="media-body">
+										<h3> 수미칩 / ENTP </h3>
+										<p> 가격 : 2000원 <a href="https://github.com/ssmmchoi" target="_blank"> 수미 </a></p>
 									</div>
 								</div>
 							</div>
@@ -189,9 +200,10 @@
 					</section>
 				</div>	<!-- .tm-content -->
 				<footer class="footer-link">
-					<p class="tm-copyright-text"> 남승현과 아이들
+					<img src="{{ url_for('static', filename='36.png') }}" width="300" height="150">
+					<!--<p class="tm-copyright-text"> MR.MARKET
 
-                    - Design: Tooplate</p>
+                    - Design: Tooplate</p>-->
 				</footer>
 			</div>	<!-- row -->
 		</div>
