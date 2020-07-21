@@ -14,7 +14,17 @@ def db_conn():
     return conn, cursor
 
 
-def get_recommend_list2(dff, name):
+
+def get_recommend_list2(dff, cname):
+    # 유사도 검사에 사용할 비율 컬럼 리스트 생성
+    dff.drop('index', axis=1, inplace=True)
+    cols = list(dff.columns)
+    cols_use = []
+    for col in cols:
+        if '비율' in col:
+            print(col)
+            cols_use.append(col)
+
     company = dff["회사명"].unique()
     lst_idx = []
 
@@ -26,17 +36,21 @@ def get_recommend_list2(dff, name):
     recom_df = dff.iloc[lst_idx, :]
     recom_df.reset_index(drop=True, inplace=True)
 
-    cluster_num = recom_df[recom_df["회사명"] == name]["cluster"].values[0]
+    cluster_num = recom_df[recom_df["회사명"] == cname]["cluster"].values[0]
     new_df = recom_df[recom_df["cluster"] == cluster_num]
     new_df.reset_index(drop=True, inplace=True)
-    cosine = cosine_similarity(new_df.iloc[:, 9:], new_df.iloc[:, 9:]).argsort()[:, ::-1]
-    company_index = new_df[new_df["회사명"] == name].index.values
 
-    sim_index = cosine[company_index, :6].reshape(-1)
+    dist = euclidean_distances(new_df.loc[:, cols_use], new_df.loc[:, cols_use]).argsort()[:, ::-1]
+    company_index = new_df[new_df["회사명"] == cname].index.values
+
+    sim_index = dist[company_index, :10].reshape(-1)
     sim_index = sim_index[sim_index != company_index]
 
     result = new_df.iloc[sim_index, :].sort_values("자본총계", ascending=False)
     return result
+
+
+
 
 
 
@@ -51,34 +65,20 @@ def index():
 def result():
     if request.method == 'POST':
         cname = request.form['name']
-        print("cname = ", cname) # cname =  아이톡시
-
         conn,cursor = db_conn()
-        print("2")
-        df = pd.read_sql("select * from fs_simple", conn)
-        print(df)
-        df2 = df.drop('index', axis=1, inplace=True)
-        print(df2)
+
+        df = pd.read_sql("select * from fs", conn)
 
         data3 = get_recommend_list2(df, cname)
         #data4 = data3[['회사명'], ['업종'], ['결산기준일'], ['자산총계'], ['자본총계'], ['부채총계']]
         data4 = data3.iloc[:, [0,1, 4, 6, 94, 170, 172]]
-
         def pre(x):
             x = x.replace("[", "")
             a = x.replace("]", "")
             return a
-
         data4["종목코드"] = data4["종목코드"].agg(pre)
-
         data5 = np.array(data4)
-
-
-        print('data5 =', data5)
-        print('a = ', type(data5))
-
         size = len(data5)
-        print('size =', size)
         '''
         conn, cursor = db_conn()
         sql = f"select 회사명, 업종명, 결산기준일, 자산총계, 자본총계, 부채총계 from fs_simple where 회사명 = '{cname}'"
@@ -86,10 +86,12 @@ def result():
         data4 = cursor.fetchall()
         size = len(data4)
         '''
+
+
         return render_template("/page2.html", dataset=data5, size=size, title=cname)
 
 
 # 프로그램 시작점
 if __name__ == "__main__" :
-    app.run() # application 실행
+    app.run(host = '172.20.10.8', port=16) # application 실행
 
