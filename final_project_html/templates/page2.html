@@ -79,7 +79,7 @@
 							<li>
 								<a href="#contact" class="scrolly" data-bg-img="constructive_bg_02.jpg" data-page="#tm-section-4">
 									<i class="fas fa-comments tm-nav-fa-icon"></i>
-									<span>Contact</span>
+									<span> 검색회사 연도별 자료 </span>
 								</a>
 							</li>
 						</ul>
@@ -95,45 +95,27 @@
 
 							<div align="center">
                                 <br><br>
-                                <h2> 검색 회사 </h2>
+                                <h2> 회사명 : '{{title}}' </h2>
+								<h3> cluster명 : {{cluster}} </h3>
+								<h2> 유사도 상위 {{size}}개 리스트 </h2>
                                 <table border="1" width = "1050" align="center" >
                                     <tr>
                                         <th> 종목코드 </th> <th> 회사명 </th> <th> 업종명 </th>
                                         <th> 결산기준일 </th> <th> 자산총계 </th> <th> 부채총계 </th> <th> 자본총계 </th>
                                     </tr>
-
                                         {% for row in dataset %}
                                         <tr>
                                             <td> {{row[0]}}</td> <td> <a href = "https://finance.naver.com/item/main.nhn?code={{row[0]}}" id="res" target="_blank">{{row[1]}}</td></a>
                                             <td> {{row[2]}}</td> <td> {{row[3]}}</td>
                                             <td> {{row[4]}}</td> <td> {{row[5]}}</td>
 											<td> {{row[6]}}</td>
-
-
                                         </tr>
                                         {% endfor %}
-
-
-									<!--
-									{% for table in dataset %}
-										{{title[loop.index]}}
-										{{ table|safe }}
-									{% endfor %}
-									-->
-									<!--
-									{% for i in texts %}
-										{%if loop.index < 30 %}
-											<a href = "https://ko.wikipedia.org/wiki/{{i[0]}}" id="res">{{i[0] if i[0] is not none}}  </a>
-										{% endif %}
-									{%endfor%}-->
-
                                 </table>
-                                    <p> 전체 레코드 수 : {{size}} 개</p>
-                                <br>
-                                <a href="/"> 이전 </a>
+								<br>
+								<h2> <a href="/" > 이전 </a> </h2>
+								<br>
                             </div>
-
-							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
 						</div>
 					</section>
 
@@ -919,7 +901,7 @@
 							},
 							"title": [
 								{
-									"text": "Cluster2",
+									"text": "LL5",
 									"padding": 5,
 									"itemGap": 10
 								}
@@ -1076,7 +1058,7 @@
 							},
 							"title": [
 								{
-									"text": "Cluster7",
+									"text": "LL6",
 									"padding": 5,
 									"itemGap": 10
 								}
@@ -1318,51 +1300,36 @@
 
 					<!-- section 3 -->
 					<section id="tm-section-3" class="tm-section">
-						<div class="row mb-4">
-							<header class="col-xl-12"><h2 class="tm-text-shadow">Our Company</h2></header>
-						</div>
-						<div class="row">
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-apple tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>HTML Templates</h3>
-										<p>We provide a variety of templates for you at no cost. Please spread a word about <a href="https://plus.google.com/+tooplate" target="_parent">Tooplate</a> website. Thank you.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Free Images</h3>
-										<p>Photos by <a href="https://unsplash.com" target="_blank">Unsplash.com</a> website, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-fly mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-12 col-md-6 col-lg-12 col-xl-6 mb-4">
-								<div class="media tm-bg-transparent-black tm-border-white">
-									<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>
-									<div class="media-body">
-										<h3>Phasellus eleifend</h3>
-										<p>Phasellus feugiat scelerisque sapien, ac ornare arcu finibus sed. Aenean ultrices nisi sit amet facilisis viverra.</p>
-									</div>
-								</div>
-							</div>
-						</div>
+						<img src="data:image/png;base64, {{ plot_url }}", width="1000" height="700">
+
+
 					</section>
 
 					<!-- section 4 -->
 					<section id="tm-section-4" class="tm-section">
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div align="center">
+								<h2> 회사명 : '{{title}}' </h2>
+								<table border="1" align="center" >
+									<tr>
+										 <th> 결산기준일 </th> <th> 자산총계 </th> <th> 유동자산비율 </th> <th> 유형자산비율 </th>
+										 <th> 무형자산비율 </th> <th> 금융자산비율 </th> <th> 자본비율 </th> <th> 부채비율 </th>
+									</tr>
+										{% for row in dataset2 %}
+										<tr>
+											<td> {{row[0]}}</td> <td> {{row[1]}}</td>
+											<td> {{row[2]}}</td> <td> {{row[3]}}</td>
+											<td> {{row[4]}}</td> <td> {{row[5]}}</td>
+											<td> {{row[6]}}</td> <td> {{row[7]}}</td>
+										</tr>
+										{% endfor %}
+								</table>
+								<br>
+								<h2> <a href="/" > 이전 </a> </h2>
+								<br>
+							</div>
+						</div>
+						<!--
 						<div class="tm-bg-transparent-black tm-contact-box-pad">
 							<div class="row mb-4">
 								<div class="col-sm-12">
@@ -1399,6 +1366,7 @@
 								</div>
 							</div>
 						</div>
+						-->
 					</section>
 				</div>	<!-- .tm-content -->
 				<footer class="footer-link">

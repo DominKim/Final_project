@@ -70,36 +70,33 @@
 					</nav>
 				</div>
 			</div>
-
 			<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 tm-content">
 
 					<!-- section 1 -->
 					<section id="tm-section-1" class="tm-section">
-						<div class="ml-auto">
-							<!--<header class="mb-4"><h1 class="tm-text-shadow"> FS </h1></header>-->
+						<div class="tm-bg-transparent-black tm-contact-box-pad">
+							<div class="ml-auto">
+								 <img src="{{ url_for('static', filename='35.png') }}" width="250" height="200">
+								 <p class="mb-5 tm-font-big"> Show financial statements similar to the company you want. </p>
 
-							<img src="{{ url_for('static', filename='35.png') }}" width="250" height="200">
-							<p class="mb-5 tm-font-big"> Show financial statements similar to the company you want. </p>
-
-							<div class="submit-form">
-								<form id="form-submit" action="/result" method="post">
-									<div class="row">
-										<div class="col-md-4 first-item">
-											<fieldset>
+								 <div class="submit-form">
+									<form id="form-submit" action="/result" method="post">
+									   <div class="row">
+										  <div class="col-md-4 first-item">
+											 <fieldset>
 												<input name="name" type="text" class="form-control" id="name" placeholder="회사명 입력" required="">
-											</fieldset>
-										</div>
-										<div class="col-md-4 first-item">
-											<fieldset>
+											 </fieldset>
+										  </div>
+										  <div class="col-md-4 first-item">
+											 <fieldset>
 												<button type="submit" id="form-submit" class="btn"> Search Now </button>
-											</fieldset>
-										</div>
-									</div>
-								</form>
+											 </fieldset>
+										  </div>
+									   </div>
+									</form>
+								 </div>
 							</div>
-
-							<!-- data-nav-link holds the ID of nav item, which means this link should behave the same as that nav item  -->
-						</div>
+                  		</div>
 					</section>
 
 
@@ -161,8 +158,10 @@
 									<!--<i class="fab fa-apple tm-icon-circled tm-icon-media"></i>-->
 									<img src="{{ url_for('static', filename='fs.jpg') }}" width="100" height="100">
 									<div class="media-body">
-										<h3> 남승현 / ENTJ </h3>
-										<p> <a href="https://github.com/nsh92" target="_blank"> 남승현 </a> </p>
+										<h3> <a href="https://github.com/nsh92" target="_blank"> 남승현 </a> </h3>
+										<h5> "대담한 통솔자" </h5>
+										<p> 리더 </p>
+										<p> 나이 : 29 </p>
 									</div>
 								</div>
 							</div>
@@ -171,8 +170,10 @@
 									<!--<i class="fas fa-map-pin mr-4 tm-icon-circled tm-icon-media"></i>-->
 									<img src="{{ url_for('static', filename='domin.jpg') }}" width="100" height="100">
 									<div class="media-body">
-										<h3> 김도민 / ISFJ </h3>
-										<p> <a href="https://github.com/DominKim" target="_blank"> 김도민 </a> </p>
+										<h3> <a href="https://github.com/DominKim" target="_blank"> 김도민 </a> </h3>
+										<h5> "용감한 수호자" </h5>
+										<p> 큰형 </p>
+										<p> 나이 : 30 </p>
 									</div>
 								</div>
 							</div>
@@ -181,8 +182,10 @@
 									<!--<i class="fab fa-fly mr-4 tm-icon-circled tm-icon-media"></i>-->
 									<img src="{{ url_for('static', filename='mh.jpg') }}" width="100" height="100">
 									<div class="media-body">
-										<h3> 양명호 / ESPJ </h3>
-										<p> <a href="https://github.com/yangmyongho" target="_blank"> 양명호 </a> </p>
+										<h3> <a href="https://github.com/yangmyongho" target="_blank"> 양명호 </a> </h3>
+										<h5> "엄격한 관리자" </h5>
+										<p> 막내 </p>
+										<p> 나이 : 27 </p>
 									</div>
 								</div>
 							</div>
@@ -191,8 +194,10 @@
 									<!--<i class="fab fa-linode mr-4 tm-icon-circled tm-icon-media"></i>-->
 									<img src="{{ url_for('static', filename='sumi.jpg') }}" width="100" height="100">
 									<div class="media-body">
-										<h3> 수미칩 / ENTP </h3>
-										<p> 가격 : 2000원 <a href="https://github.com/ssmmchoi" target="_blank"> 수미 </a></p>
+										<h3> <a href="https://github.com/ssmmchoi" target="_blank"> 수미칩 </a> </h3>
+										<h5> "뜨거운 논쟁을 즐기는 변론가"</h5>
+										<p> 농심 </p>
+										<p> 가격 : 2000원 </p>
 									</div>
 								</div>
 							</div>
@@ -200,6 +205,8 @@
 					</section>
 				</div>	<!-- .tm-content -->
 				<footer class="footer-link">
+					<br>
+					<br>
 					<img src="{{ url_for('static', filename='36.png') }}" width="300" height="150">
 					<!--<p class="tm-copyright-text"> MR.MARKET
 
