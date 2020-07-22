@@ -84,19 +84,19 @@
                                 <h2> 검색 예금 상품 </h2>
                                 <table border="1" width = "800" align="center" >
                                     <tr>
-                                        <th> 은행코드 </th> <th> 은행이름 </th> <th> 은행가입여부 </th>
-                                        <th> 예금상품코드 </th> <th> 예금상품이름 </th> <th> 가입기간 </th> <th> 이율 </th>
-                                    </tr>
-                                    {% if dataset : %}
+                                        <th> 종목코드 </th> <th> 회사명 </th> <th> 업종 </th>
+                                        <th> 업종명 </th> <th> 결산기준일 </th> <th> 보고서종류 </th> <th> 유동자산per자산총계 </th>
+
+						
                                         {% for row in dataset %}
                                         <tr>
-                                            <td> {{row[0]}}</td> <td> {{row[1]}}</td>
+                                            <td> {{row[0]}}</td> <td> <a href = "https://finance.naver.com/item/main.nhn?code={{row[0]}}" id="res"></a>{{row[1]}}</td></a>
                                             <td> {{row[2]}}</td> <td> {{row[3]}}</td>
                                             <td> {{row[4]}}</td> <td> {{row[5]}}</td>
                                             <td> {{row[6]}}</td>
                                         </tr>
                                         {% endfor %}
-                                    {% endif%}
+                        
                                 </table>
                                     <p> 전체 레코드 수 : {{size}} 개</p>
                                 <br>
